@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+    <script>
+        const vectorNumeros = [34, 56, 2, false];
+        const vectorNombres = ["Link", "Zelda", "Saria"];
+
+        document.write("<p>" + vectorNombres + "</p>");
+
+        console.log(vectorNumeros);
+        console.log(vectorNombres);
+
+        const vectorEdades = new Array();
+        const vectorTemps = Array();
+
+        vectorTemps[0] = 67.8;
+        vectorTemps[1] = 17.8;
+        vectorTemps[2] = 637.8;
+        vectorTemps[3] = 67.82;
+        vectorTemps[4] = 667.8;
+
+        vectorTemps.push(10.10);
+
+        for (let index = 0; index < vectorTemps.length; index++) {
+            const element = vectorTemps[index];
+            console.log(element);
+        }
+
+        console.log(vectorTemps[4]);
+        console.log("-----------------------------");
+
+        for (var indice in vectorTemps) {
+            console.log("Temperatura: " + vectorTemps[indice]);
+        }
+
+        console.log("-----------------------------");
+
+        vectorTemps.forEach(element => {
+            console.log("temperatura: " + element);
+        });
+
+
+        console.log("-----------------------------");
+
+        document.write("<ol>")
+        vectorTemps.forEach(myFunction);
+        document.write("</ol>")
+
+
+        function myFunction(value, index, array) {
+            document.write("<li>" + value + "</li>");
+        }
+
+        console.log("-----------------------------");
+        const alumnos = [
+            ["Denise", 90, 100, 50, 80, 100, 70],
+            ["Lauro", 90, 20, 50, 80, 100, 70],
+            ["Cesar", 90, 100, 50, 50, 100, 70],
+            ["Jose Enrique", 100, 100, 50, 80, 100, 70],
+        ];
+
+        alumnos.forEach(alumno => {
+            let suma = 0;
+            for (let i = 1; i < alumno.length; i++) {
+                suma += alumno[i];
+            }
+            const promedio = suma / (alumno.length - 1);
+            console.log(alumno[0] + " Promedio: " + promedio);
+        });
+
+
+        let suma2 = 0;
+        
+        alumnos.forEach((alumno, index) => {
+            for (let i = 1; i < alumno.length; i++) {
+                suma2 += alumno[i];
+            }
+
+            if (index === alumnos.length - 1) {
+                console.log("Promedio del grupo: " + suma2 / ((alumnos[0].length - 1) * alumnos.length));
+            }
+        });
+
+
+
+        const materias = ["Materia 1", "Materia 2", "Materia 3", "Materia 4", "Materia 5", "Materia 6"];
+
+        materias.forEach((materia, index) => {
+            let suma = 0;
+            alumnos.forEach(alumno => {
+                suma += alumno[index + 1];
+            });
+            const promedio = suma / alumnos.length;
+            console.log(materia + " Promedio: " + promedio);
+        });
+
+
+    </script>
+
+</body>
+
+</html>

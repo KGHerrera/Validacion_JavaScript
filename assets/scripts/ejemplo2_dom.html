@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="saludo">Bienvenido: </h1>
+
+    <label>email:</label>
+    <input type="email" id="correo" value="correo electronico">
+    <input value="ACCEDER" type="submit">
+
+    <script>
+        console.log(document.getElementById("saludo"));
+        const componente1 = document.getElementById("saludo");
+        var componente2 = document.getElementById("saludo"); // de to
+        let componente3 = document.getElementById("saludo"); // de bloque
+
+        componente1.style.color = "red";
+        componente1.innerHTML = "Hellow";
+
+        let comp_btn = document.getElementsByTagName("input");
+
+        console.log(document.getElementsByTagName("input"));
+
+        comp_btn[1].value= "helow";
+
+        const comp_caja_correo = document.getElementById("correo");
+
+        comp_caja_correo.value = "EMAIL";
+    </script>
+
+</body>
+</html>
